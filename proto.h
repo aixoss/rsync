@@ -3,7 +3,9 @@
 int allow_access(const char *addr, const char **host_ptr, int i);
 void free_acl(stat_x *sxp);
 int get_acl(const char *fname, stat_x *sxp);
+void old_send_acl(stat_x *sxp, int f);
 void send_acl(int f, stat_x *sxp);
+void old_recv_acl(struct file_struct *file, int f);
 void receive_acl(int f, struct file_struct *file);
 void cache_tmp_acl(struct file_struct *file, stat_x *sxp);
 void uncache_tmp_acls(void);
