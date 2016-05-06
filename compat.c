@@ -205,13 +205,6 @@ void setup_protocol(int f_out,int f_in)
 	if (protocol_version < 30) {
 		if (append_mode == 1)
 			append_mode = 2;
-		if (preserve_xattrs && !local_server) {
-			rprintf(FERROR,
-			    "--xattrs requires protocol 30 or higher"
-			    " (negotiated %d).\n",
-			    protocol_version);
-			exit_cleanup(RERR_PROTOCOL);
-		}
 	}
 
 	if (delete_mode && !(delete_before+delete_during+delete_after)) {
